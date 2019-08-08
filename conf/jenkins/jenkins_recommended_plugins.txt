@@ -18,3 +18,4 @@ pam-auth
 ldap
 mailer
 email-ext
+authorize-project

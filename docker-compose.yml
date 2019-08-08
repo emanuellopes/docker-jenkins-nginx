@@ -8,8 +8,6 @@ services:
       - ./conf/nginx.conf:/etc/nginx/conf.d/jenkins.conf
       - ./jenkins_home:/var/lib/jenkins_home/ #war folder
       - ./jenkins_home/userContent:/var/lib/jenkins/ #jenkins home folder
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/local/bin/docker:/usr/bin/docker:ro
     ports:
       - ${NGINX_HTTP_PORT}:80
       - ${NGINX_HTTPS_PORT}:443
@@ -22,3 +20,7 @@ services:
       - ${JENKINS_PORT}:8080
     volumes:
       - ./jenkins_home:/var/jenkins_home
+    environment:
+      JENKINS_USER: ${JENKINS_ADMIN_USER}
+      JENKINS_PASS: ${JENKINS_ADMIN_PASSWORD}
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
