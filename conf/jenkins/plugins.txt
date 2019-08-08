@@ -1,0 +1,11 @@
+view-job-filters
+monitoring
+performance
+disk-usage
+perfpublisher
+job-dsl
+scm-api
+github-pullrequest
+docker-workflow
+blueocean
+credentials-binding
